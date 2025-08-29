@@ -11,6 +11,7 @@
       margin: 0;
       min-height: 100vh;
       color: #222;
+      padding-top: 80px; /* Add space for the fixed header */
     }
     h1, h2 {
       text-align: center;
@@ -18,6 +19,34 @@
       font-weight: 700;
       letter-spacing: 1px;
       color: #2d3a58;
+    }
+    .fixed-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(90deg, #e0eaff 0%, #f8f9fa 100%);
+      box-shadow: 0 4px 16px rgba(45,58,88,0.08);
+      padding: 20px 0 10px 0;
+      z-index: 999;
+      text-align: center;
+      font-size: 1.15rem;
+    }
+    .fixed-header a.back {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 10px;
+      border-radius: 6px;
+      padding: 6px 14px;
+      background: linear-gradient(90deg, #e0eaff 0%, #c7d2fe 100%);
+      transition: background 0.15s, color 0.15s;
+      box-shadow: 0 1px 4px rgba(45,58,88,0.04);
+      display: inline-block;
+    }
+    .fixed-header a.back:hover {
+      background: linear-gradient(90deg, #2563eb 0%, #1e3a8a 100%);
+      color: #fff;
     }
     .gallery {
       display: grid;
@@ -73,6 +102,13 @@
       color: #fff;
     }
     @media (max-width: 600px) {
+      body {
+        padding-top: 72px;
+      }
+      .fixed-header {
+        padding: 14px 0 7px 0;
+        font-size: 1rem;
+      }
       .gallery {
         grid-template-columns: 1fr;
         gap: 24px;
@@ -82,38 +118,33 @@
         font-size: 1.4rem;
         margin-top: 5px;
       }
-
       .about-frame {
-  max-width: 700px;
-  margin: 36px auto 0 auto;
-  background: linear-gradient(90deg, #e0eaff 0%, #f8f9fa 100%);
-  border-radius: 18px;
-  box-shadow: 0 4px 24px rgba(45,58,88,0.13);
-  padding: 28px 28px 20px 28px;
-  text-align: center;
-  color: #374151;
-}
-.about-frame h2 {
-  margin-top: 0;
-  margin-bottom: 5px;
-  font-size: 1.5rem;
-  color: #2563eb;
-  font-weight: 700;
-}
-.about-frame p {
-  margin: 0;
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-      
+        max-width: 700px;
+        margin: 36px auto 0 auto;
+        background: linear-gradient(90deg, #e0eaff 0%, #f8f9fa 100%);
+        border-radius: 18px;
+        box-shadow: 0 4px 24px rgba(45,58,88,0.13);
+        padding: 28px 28px 20px 28px;
+        text-align: center;
+        color: #374151;
+      }
+      .about-frame h2 {
+        margin-top: 0;
+        margin-bottom: 5px;
+        font-size: 1.5rem;
+        color: #2563eb;
+        font-weight: 700;
+      }
+      .about-frame p {
+        margin: 0;
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
     }
   </style>
 </head>
 
 <body>
-
-
 
   <!-- Fixed Header -->
   <div class="fixed-header">
